@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+{{ template "head" . }}
+
+<body >
+{{ template "header" .}}
+<div class="container" >
+<h1>店舗詳細</h1>
+{{if .errMsg}}
+<div style="color:red">
+    <p> {{.errMsg}} </p>
+</div>
+{{end}}
+<table class="table" style="width:100%;">
+    <thead>
+        <tr>
+            <th>StoreID</th>
+            <th>Storename</th>
+            <th>Address</th>
+            <th>Genre</th>
+            <th>Tel</th>
+            <th>Information</th>
+            <th>Tables</th>
+            <th>CreatedAt</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{.store.ID}}</td>
+            <td>{{.store.Storename}}</td>
+            <td>{{.store.Loc}}</td>
+            <td>{{.store.Genre}}</td>
+            <td>{{.store.Tel}}</td>
+            <td>{{.store.Information}}</td>
+            <td>{{.store.Tables}}</td>
+            <td>{{.store.CreatedAt.Year}}-{{.store.CreatedAt.Month}}-{{.store.CreatedAt.Day}}</td>
+
+            <td> <form action="/detail/{{.store.ID}}" method="post" style="display:inline;" ><button class="button">Create</button></form></td>
+        </tr>
+    </tbody>
+</table>
+<img src="http://e-village.main.jp/gazou/image_gazou/gazou_0479.jpg">
+<img src="qrcode.jpg" alt="QRCODE1">
+<img src=".\qrcode.jpg" alt="QRCODE2">
+
+
+{{ template "footer" .}}
+</body>
+
+</html>
