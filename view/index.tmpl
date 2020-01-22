@@ -15,12 +15,12 @@
 <table class="table" style="width:100%;">
     <thead>
         <tr>
-            <th>StoreID</th>
-            <th>Storename</th>
+            <th>ShopID</th>
+            <th>Shopname</th>
             <th>Address</th>
             <th>Genre</th>
             <th>Tel</th>
-            <th>Information</th>
+            <th>Summary</th>
             <th>Tables</th>
             <th>CreatedAt</th>
             <th>Action</th>
@@ -30,13 +30,13 @@
     {{.}}
         {{range .stores}}
         <tr>
-            <td>{{.ID}}</td>
-            <td>{{.Storename}}</td>
-            <td>{{.Loc}}</td>
-            <td>{{.Genre}}</td>
-            <td>{{.Tel}}</td>
-            <td>{{.Information}}</td>
-            <td>{{.Tables}}</td>
+            <td>{{.Shopid}}</td>
+            <td>{{.Shopname}}</td>
+            <td>{{.Shopaddress}}</td>
+            <td>{{.Shopgenre}}</td>
+            <td>{{.Shoptel}}</td>
+            <td>{{.Shopsummary}}</td>
+            <td>{{.Shoptable}}</td>
             <td>{{.CreatedAt.Year}}-{{.CreatedAt.Month}}-{{.CreatedAt.Day}}</td>
 
             <td> <form action="/delete/{{.ID}}" method="post" style="display:inline;" ><button class="button">delete</button></form></td>

@@ -20,7 +20,7 @@ func InitDB() *gorm.DB {
 		Password: "",
 		Host:     "localhost",
 		Port:     "3306",
-		Database: "crud_go",
+		Database: "crudapp",
 		Debug:    true,
 	}
 

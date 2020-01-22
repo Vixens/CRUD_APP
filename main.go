@@ -16,11 +16,13 @@ func main() {
 
 	router.LoadHTMLGlob("view/*")
 
-	router.GET("/", server.GetStorePage)
-	router.GET("/new", server.NewStorePage)
+	router.GET("/shops", server.GetShopPage)
+	router.GET("/new", server.NewShopPage)
+	// router.GET("/shops/:shopid/menu", server.GetMenuHandler)
+	// router.GET("/shops/:shopid/menu", server.NewMenuHandler)
 
-	router.POST("/new", server.CreateStoreHandler)
-	router.POST("/delete/:id", server.DeleteStoreHandler)
+	router.POST("/new", server.CreateShopHandler)
+	router.POST("/delete/:shopid", server.DeleteShopHandler)
 
 	router.Run(":8080")
 }
